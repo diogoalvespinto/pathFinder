@@ -13,16 +13,19 @@
           </div>
           <%= f.input :prompt_id, as: :hidden, input_html: { value: @sample_prompt.id, data: {shuffle_prompt_target: "promptInput" } } %>
           <div class="d-flex">
+
             <div>
-              <button data-action="click->shuffle-prompt#shuffle", class="btn btn-secondary mb-3" >
+              <button data-action="click->shuffle-prompt#shuffle", class="btn btn-secondary mb-3">
                 <i class="fa-solid fa-shuffle"></i> New prompt
               </button>
             </div>
+
             <div class="px-2">
-              <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-secondary mb-4" >
+              <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-dark mb-4", style="opacity:0.50" >
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
+
           </div>
           <%= f.input :content, label: "Write here" %>
         </div>
