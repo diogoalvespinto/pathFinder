@@ -8,13 +8,29 @@
       <div class="form-inputs">
         <h3>How was your day?</h3>
 
-      <div class="d-flex justify-content-between pt-3 pb-2">
-        <% Emoji.all.each do |emoticon| %>
-          <%= f.label :emoji_id, emoticon.title do %>
-          <%= f.radio_button :emoji_id, emoticon.id %>
-          <h1><%= emoticon.image.html_safe %></h1>
+      <div class="carousel slide mt-2 pt-1" id="emojiCarousel" data-controller="edit-carousel">
+        <div class="carousel-inner">
+          <% Emoji.all.each_with_index do |emoji, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %> item"
+                  data-edit-carousel-target="emoji"
+                  data-action="click->edit-carousel#editEmoji"
+                  data-emoji-id="<%= emoji.id %>">
+              <label>
+                <h1 style="font-size:140px;"><%= emoji.image.html_safe %></h1>
+                <%= radio_button_tag 'logbook[emoji_id]', emoji.id, false, id: nil, style: 'display: none;' %>
+              </label>
+            </div>
           <% end %>
-        <% end %>
+
+          <a class="carousel-control-prev" href="#emojiCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#emojiCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
       </div>
 
 
