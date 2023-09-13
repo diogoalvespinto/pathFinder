@@ -53,7 +53,7 @@ export default class extends Controller {
               autoSkip: false,
               stepSize: 1,
               callback: function (value, index, values) {
-                var customTicks = ['', '😭', '😟', '😐', '🙂', '😁', ''];
+                var customTicks = ['', '', '', '', '', '', ''];
                 return customTicks[index];
               },
             },

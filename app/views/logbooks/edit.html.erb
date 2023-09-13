@@ -11,7 +11,7 @@
       <div class="carousel slide mt-2 pt-1" id="emojiCarousel" data-controller="edit-carousel">
         <div class="carousel-inner">
           <% Emoji.all.each_with_index do |emoji, index| %>
-            <div class="carousel-item <%= 'active' if index == 0 %> item"
+            <div class="carousel-item <%= 'active' if index == (@logbook.emoji_id - 1) %> item"
                   data-edit-carousel-target="emoji"
                   data-action="click->edit-carousel#editEmoji"
                   data-emoji-id="<%= emoji.id %>">

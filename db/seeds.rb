@@ -28,12 +28,6 @@ puts "Creating users..."
 diogo = User.new(email: "diogo@gmail.com", password: "123456", first_name: "Diogo", last_name: "Pinto")
 diogo.save
 
-dani = User.new(email: "dani@gmail.com", password: "123456", first_name: "Dani", last_name: "Jones")
-dani.save
-
-james = User.new(email: "james@gmail.com", password: "123456", first_name: "James", last_name: "Galler")
-james.save
-
 
 puts "Users created!"
 puts "Creating emojis..."
@@ -41,35 +35,35 @@ puts "Creating emojis..."
 
 happy = Emoji.new(title: "Happy",
                   animation: "<i class='fa-solid fa-face-smile-beam fa-beat-fade' style='color: #9DB1DE;'></i>",
-                  fadeanimation: "<i class='fa-solid fa-face-smile-beam fa-fade' style='color: #9DB1DE;'></i>",
+                  fadeanimation: "<i class='fa-regular fa-face-smile-beam'></i>",
                   image: "<i class='fa-solid fa-face-smile-beam' style='color: #9DB1DE;'></i>",
                   value: 5)
 happy.save
 
 content = Emoji.new(title: "Content",
                     animation: "<i class='fa-solid fa-face-smile fa-beat-fade' style='color: #9DB1DE;'></i>",
-                    fadeanimation: "<i class='fa-solid fa-face-smile fa-fade' style='color: #9DB1DE;'></i>",
+                    fadeanimation: "<i class='fa-regular fa-face-smile'></i>",
                     image: "<i class='fa-solid fa-face-smile' style='color: #9DB1DE;'></i>",
                     value: 4)
 content.save
 
 apathetic = Emoji.new(title: "Apathetic",
                       animation: "<i class='fa-solid fa-face-meh fa-beat-fade' style='color: #9DB1DE;'></i>",
-                      fadeanimation: "<i class='fa-solid fa-face-meh fa-fade' style='color: #9DB1DE;'></i>",
+                      fadeanimation: "<i class='fa-regular fa-face-meh'></i>",
                       image: "<i class='fa-solid fa-face-meh' style='color: #9DB1DE;'></i>",
                       value: 3)
 apathetic.save
 
 sad = Emoji.new(title: "Sad",
                 animation: "<i class='fa-solid fa-face-frown-open fa-beat-fade' style='color: #9DB1DE;'></i>",
-                fadeanimation: "<i class='fa-solid fa-face-frown-open fa-fade' style='color: #9DB1DE;'></i>",
+                fadeanimation: "<i class='fa-regular fa-face-frown-open'></i>",
                 image: "<i class='fa-solid fa-face-frown-open' style='color: #9DB1DE;'></i>",
                 value: 2)
 sad.save
 
 terrible = Emoji.new(title: "Terrible",
                      animation: "<i class='fa-solid fa-face-frown fa-beat-fade' style='color: #9DB1DE;'></i>",
-                     fadeanimation: "<i class='fa-solid fa-face-frown fa-fade' style='color: #9DB1DE;'></i>",
+                     fadeanimation: "<i class='fa-regular fa-face-frown'></i>",
                      image: "<i class='fa-solid fa-face-frown' style='color: #9DB1DE;'></i>",
                      value: 1)
 terrible.save
@@ -80,57 +74,57 @@ puts "Creating logbooks..."
 
 logbook1 = Logbook.new(
   summary: "Another day, another routine. I can't seem to muster any energy or interest in anything. It's like I'm stuck in a perpetual state of indifference, and I don't know how to break free.",
-  date: "24 Aug 2023",
+  date: "12 Sep 2023",
   time: "16:14"
 )
 logbook1.emoji = apathetic
-logbook1.user = dani
+logbook1.user = diogo
 logbook1.save
 
 logbook2 = Logbook.new(
   summary: "Today was tough. I couldn't shake off this lingering sadness that weighed on my heart like a heavy stone. The world seemed a little dimmer, and I couldn't help but miss the days when things felt brighter.",
-  date: "25 Aug 2023",
+  date: "11 Sep 2023",
   time: "19:02"
 )
 logbook2.emoji = sad
-logbook2.user = dani
+logbook2.user = diogo
 logbook2.save
 
 logbook3 = Logbook.new(
   summary: "Simplicity has its own charm. Today, I found contentment in the small things: a warm cup of cocoa, a cozy blanket, and the soothing sound of rain tapping on my window. Life is good.",
-  date: "26 Aug 2023",
+  date: "10 Sep 2023",
   time: "10:27"
 )
 logbook3.emoji = content
-logbook3.user = dani
+logbook3.user = diogo
 logbook3.save
 
 logbook4 = Logbook.new(
   summary: "The tears wouldn't stop today. It felt like a storm of sadness had taken over, and I couldn't find shelter from it. I miss the days when the sun used to shine a little brighter.",
-  date: "27 Aug 2023",
+  date: "09 Sep 2023",
   time: "19:42"
 )
 logbook4.emoji = sad
-logbook4.user = dani
+logbook4.user = diogo
 logbook4.save
 
-# logbook5 = Logbook.new(
-#   summary: "The simple pleasures in life never cease to amaze me. Today, I watched a breathtaking sunset and felt at peace with the world. Sometimes, all you need is a moment to reflect and appreciate the beauty around you.",
-#   date: "28 Aug 2023",
-#   time: "08:56"
-# )
-# logbook5.emoji = content
-# logbook5.user = dani
-# logbook5.save
+logbook5 = Logbook.new(
+  summary: "The simple pleasures in life never cease to amaze me. Today, I watched a breathtaking sunset and felt at peace with the world. Sometimes, all you need is a moment to reflect and appreciate the beauty around you.",
+  date: "28 Aug 2023",
+  time: "08:56"
+)
+logbook5.emoji = content
+logbook5.user = diogo
+logbook5.save
 
-# logbook6 = Logbook.new(
-#   summary: "Today was absolutely wonderful! I woke up to the warm rays of the sun streaming through my window, and I couldn't help but smile. I spent the day with my closest friends, laughing, sharing stories, and enjoying life's simple pleasures. It's moments like these that make me truly grateful for the beautiful people in my life.",
-#   date: "29 Aug 2023",
-#   time: "14:19"
-# )
-# logbook6.emoji = happy
-# logbook6.user = dani
-# logbook6.save
+logbook6 = Logbook.new(
+  summary: "Today was absolutely wonderful! I woke up to the warm rays of the sun streaming through my window, and I couldn't help but smile. I spent the day with my closest friends, laughing, sharing stories, and enjoying life's simple pleasures. It's moments like these that make me truly grateful for the beautiful people in my life.",
+  date: "29 Aug 2023",
+  time: "14:19"
+)
+logbook6.emoji = happy
+logbook6.user = diogo
+logbook6.save
 
 logbook7 = Logbook.new(
   summary: "I'm at my wit's end. Everything that could go wrong today did, and I'm left feeling defeated and exhausted. I can only hope that tomorrow brings a glimmer of hope in this sea of despair.",
@@ -138,17 +132,17 @@ logbook7 = Logbook.new(
   time: "21:33"
 )
 logbook7.emoji = sad
-logbook7.user = dani
+logbook7.user = diogo
 logbook7.save
 
-# logbook8 = Logbook.new(
-#   summary: "I'm in a perpetual state of meh. Nothing excites me, and I can't seem to find the motivation to change that. It's as if I'm drifting through life with no direction.",
-#   date: "31 Aug 2023",
-#   time: "12:05"
-# )
-# logbook8.emoji = apathetic
-# logbook8.user = dani
-# logbook8.save
+logbook8 = Logbook.new(
+  summary: "I'm in a perpetual state of meh. Nothing excites me, and I can't seem to find the motivation to change that. It's as if I'm drifting through life with no direction.",
+  date: "31 Aug 2023",
+  time: "12:05"
+)
+logbook8.emoji = apathetic
+logbook8.user = diogo
+logbook8.save
 
 logbook9 = Logbook.new(
   summary: "Today was another tough one. The world feels heavy, and I'm struggling to find a way to lighten the load. I long for the day when I can find some respite from this sadness.",
@@ -156,7 +150,7 @@ logbook9 = Logbook.new(
   time: "23:11"
 )
 logbook9.emoji = sad
-logbook9.user = dani
+logbook9.user = diogo
 logbook9.save
 
 logbook10 = Logbook.new(
@@ -165,7 +159,7 @@ logbook10 = Logbook.new(
   time: "07:48"
 )
 logbook10.emoji = sad
-logbook10.user = dani
+logbook10.user = diogo
 logbook10.save
 
 logbook11 = Logbook.new(
@@ -174,7 +168,7 @@ logbook11 = Logbook.new(
   time: "18:22"
 )
 logbook11.emoji = content
-logbook11.user = dani
+logbook11.user = diogo
 logbook11.save
 
 logbook12 = Logbook.new(
@@ -183,7 +177,7 @@ logbook12 = Logbook.new(
   time: "09:37"
 )
 logbook12.emoji = sad
-logbook12.user = dani
+logbook12.user = diogo
 logbook12.save
 
 logbook13 = Logbook.new(
@@ -192,7 +186,7 @@ logbook13 = Logbook.new(
   time: "13:50"
 )
 logbook13.emoji = terrible
-logbook13.user = dani
+logbook13.user = diogo
 logbook13.save
 
 logbook14 = Logbook.new(
@@ -201,7 +195,7 @@ logbook14 = Logbook.new(
   time: "20:29"
 )
 logbook14.emoji = apathetic
-logbook14.user = dani
+logbook14.user = diogo
 logbook14.save
 
 logbook15 = Logbook.new(
@@ -210,7 +204,7 @@ logbook15 = Logbook.new(
   time: "11:03"
 )
 logbook15.emoji = content
-logbook15.user = dani
+logbook15.user = diogo
 logbook15.save
 
 logbook16 = Logbook.new(
@@ -219,7 +213,7 @@ logbook16 = Logbook.new(
   time: "11:03"
 )
 logbook16.emoji = happy
-logbook16.user = dani
+logbook16.user = diogo
 logbook16.save
 
 puts "Logbooks created!"

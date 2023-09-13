@@ -1,17 +1,38 @@
 <div class="text-center layer-profile pt-5">
 
-  <h1>Hi <%= current_user.first_name %> 😘</h1>
+  <h1 class="mt-3 mb-5">Basic analysis</h1>
+
+
+<div class="text-muted" style="position: absolute; top: 314px; left: 66px; font-size:13px;">
+<%= Emoji.fifth.fadeanimation.html_safe %>
+</div>
+
+<div class="text-muted" style="position: absolute; top: 299px; left: 66px; font-size:13px;">
+<%= Emoji.fourth.fadeanimation.html_safe %>
+</div>
+
+<div class="text-muted" style="position: absolute; top: 284px; left: 66px; font-size:13px;">
+<%= Emoji.third.fadeanimation.html_safe %>
+</div>
+
+<div class="text-muted" style="position: absolute; top: 269px; left: 66px; font-size:13px;">
+<%= Emoji.second.fadeanimation.html_safe %>
+</div>
+
+<div class="text-muted" style="position: absolute; top: 254px; left: 66px; font-size:13px;">
+<%= Emoji.first.fadeanimation.html_safe %>
+</div>
+
 
   <div class="container">
     <div class="journal-card my-4">
-      <p>Weekly Wellcheck Graph:</p>
+      <p>Mood flow</p>
       <canvas data-controller="profile-chart" id="chart" data-profile-target="chart"></canvas>
     </div>
 
     <div data-controller="profile">
       <div class="calendar-container my-3 text-center" data-profile-target="calendar">
         <div class="class">
-          <p>Monthly Log Calendar:</p>
         </div>
 
         <div class="container mb-5 d-flex-none">
@@ -30,17 +51,4 @@
       </div>
     </div>
   </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-<%# <% @logbooks.each do |logbook| %>
-  <%# <%= logbook.emoji.value %>
-<%# <% end %>
