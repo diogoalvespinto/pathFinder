@@ -571,4 +571,172 @@ book15.emoji = terrible
 book15.save
 
 puts "Books created!"
+puts "Creating movies..."
+
+movie1 = Movie.new(
+  title: "The Princess Bride",
+  year: "1987",
+  url: "https://www.imdb.com/title/tt0093779/",
+  image_url: "https://m.media-amazon.com/images/I/611zeTfBpoL._AC_UF894,1000_QL80_.jpg",
+  director: "Rob Reiner",
+  description: "A charming and hilarious fairy tale adventure filled with romance, humor, and swashbuckling action."
+)
+movie1.emoji = happy
+movie1.save
+
+movie2 = Movie.new(
+  title: "Amélie",
+  year: "2001",
+  url: "https://www.imdb.com/title/tt0211915/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BNDg4NjM1YjMtYmNhZC00MjM0LWFiZmYtNGY1YjA3MzZmODc5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+  director: "Jean-Pierre Jeunet",
+  description: "A whimsical and heartwarming French film about a young woman who sets out to improve the lives of those around her."
+)
+movie2.emoji = happy
+movie2.save
+
+movie3 = Movie.new(
+  title: "Up",
+  year: "2009",
+  url: "https://www.imdb.com/title/tt1049413/",
+  image_url: "https://artofthemovies.co.uk/cdn/shop/products/UP-892961_a194f37b-ec3e-4388-b052-9bc989e985ba.jpg?v=1625501195",
+  director: "Pete Docter, Bob Peterson",
+  description: "A touching and uplifting Pixar animation that follows the adventures of an elderly man and a young boy as they travel to South America in a flying house."
+)
+movie3.emoji = happy
+movie3.save
+
+movie4 = Movie.new(
+  title: "The Shawshank Redemption",
+  year: "1994",
+  url: "https://www.imdb.com/title/tt0111161/",
+  image_url: "https://m.media-amazon.com/images/I/71715eBi1sL.jpg",
+  director: "Frank Darabont",
+  description: "A powerful and inspiring film about friendship, hope, and redemption set in a prison."
+)
+movie4.emoji = content
+movie4.save
+
+movie5 = Movie.new(
+  title: "The Grand Budapest Hotel",
+  year: "2014",
+  url: "https://www.imdb.com/title/tt2278388/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_.jpg",
+  director: "Wes Anderson",
+  description: "A whimsical and visually stunning Wes Anderson film that takes viewers on a delightful journey through a luxurious European hotel."
+)
+movie5.emoji = content
+movie5.save
+
+movie6 = Movie.new(
+  title: "Forrest Gump",
+  year: "1994",
+  url: "https://www.imdb.com/title/tt0109830/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+  director: "Robert Zemeckis",
+  description: "A heartwarming and nostalgic film that follows the extraordinary life of a simple man with a kind heart."
+)
+movie6.emoji = content
+movie6.save
+
+movie7 = Movie.new(
+  title: "Lost in Translation",
+  year: "2003",
+  url: "https://www.imdb.com/title/tt0335266/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BMTUxMzk0NDg1MV5BMl5BanBnXkFtZTgwNDg0NjkxMDI@._V1_FMjpg_UX1000_.jpg",
+  director: "Sofia Coppola",
+  description: "A beautifully melancholic film about the unlikely connection between two lonely souls in a foreign land."
+)
+movie7.emoji = apathetic
+movie7.save
+
+movie8 = Movie.new(
+  title: "Eternal Sunshine of the Spotless Mind",
+  year: "2004",
+  url: "https://www.imdb.com/title/tt0338013/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_.jpg",
+  director: "Michel Gondry",
+  description: "A thought-provoking and surreal exploration of memory and love, featuring a couple erasing each other from their memories."
+)
+movie8.emoji = apathetic
+movie8.save
+
+movie9 = Movie.new(
+  title: "Drive",
+  year: "2011",
+  url: "https://www.imdb.com/title/tt0780504/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UX1000_.jpg",
+  director: "Nicolas Winding Refn",
+  description: "A stylish and atmospheric film with a stoic protagonist, featuring intense action sequences and a moody soundtrack."
+)
+movie9.emoji = apathetic
+movie9.save
+
+movie10 = Movie.new(
+  title: "Schindler's List",
+  year: "1993",
+  url: "https://www.imdb.com/title/tt0108052/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg",
+  director: "Steven Spielberg",
+  description: "A profoundly moving and heartbreaking film depicting the true story of a man who saved Jewish lives during the Holocaust."
+)
+movie10.emoji = sad
+movie10.save
+
+movie11 = Movie.new(
+  title: "Manchester by the Sea",
+  year: "2016",
+  url: "https://www.imdb.com/title/tt4034228/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BMTYxMjk0NDg4Ml5BMl5BanBnXkFtZTgwODcyNjA5OTE@._V1_.jpg",
+  director: "Kenneth Lonergan",
+  description: "A deeply emotional drama about a man dealing with a tragic loss and his journey towards healing."
+)
+movie11.emoji = sad
+movie11.save
+
+movie12 = Movie.new(
+  title: "The Pursuit of Happyness",
+  year: "2006",
+  url: "https://www.imdb.com/title/tt0454921/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BMTQ5NjQ0NDI3NF5BMl5BanBnXkFtZTcwNDI0MjEzMw@@._V1_FMjpg_UX1000_.jpg",
+  director: "Gabriele Muccino",
+  description: "A heart-wrenching yet ultimately uplifting film based on the true story of a struggling single father's pursuit of a better life for his son."
+)
+movie12.emoji = sad
+movie12.save
+
+movie13 = Movie.new(
+  title: "Taxi Driver",
+  year: "1976",
+  url: "https://www.imdb.com/title/tt0075314/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BM2M1MmVhNDgtNmI0YS00ZDNmLTkyNjctNTJiYTQ2N2NmYzc2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+  director: "Martin Scorsese",
+  description: "A dark and gritty film about a mentally unstable Vietnam War veteran who becomes a vigilante in a crime-ridden New York City."
+)
+movie13.emoji = terrible
+movie13.save
+
+movie14 = Movie.new(
+  title: "Natural Born Killers",
+  year: "1994",
+  url: "https://www.imdb.com/title/tt0110632/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BNGNjNjU1YmEtZGM5MC00ODgzLWEyY2MtZmZmNTlhOGU4OWJjXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg",
+  director: "Oliver Stone",
+  description: "A disturbing and violent film following a psychopathic couple on a killing spree."
+)
+movie14.emoji = terrible
+movie14.save
+
+movie15 = Movie.new(
+  title: "The Silence of the Lambs",
+  year: "1991",
+  url: "https://www.imdb.com/title/tt0102926/",
+  image_url: "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+  director: "Jonathan Demme",
+  description: "A psychological thriller featuring a brilliant but insane serial killer and the FBI agent who consults with him."
+)
+movie15.emoji = terrible
+movie15.save
+
+puts "Movies created!"
 puts "|||||||||||||||||| DB seeded ||||||||||||||||||||"

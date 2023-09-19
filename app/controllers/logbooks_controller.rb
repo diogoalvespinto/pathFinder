@@ -34,6 +34,8 @@ class LogbooksController < ApplicationController
         redirect_to logbook_playlist_path(@logbook)
       elsif params[:submit] == '💾'
         redirect_to logbooks_path
+      elsif params[:submit] == '🎥'
+        redirect_to logbook_movie_path(@logbook)
       end
       recommendations_controller = RecommendationsController.new
       recommendations_controller.request = request

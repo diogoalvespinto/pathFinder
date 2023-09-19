@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_151538) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_19_164212) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -88,6 +88,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_151538) do
     t.index ["user_id"], name: "index_logbooks_on_user_id"
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "director"
+    t.string "description"
+    t.string "url"
+    t.string "image_url"
+    t.bigint "emoji_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "year"
+    t.index ["emoji_id"], name: "index_movies_on_emoji_id"
+  end
+
   create_table "playlists", force: :cascade do |t|
     t.string "title"
     t.string "url"
@@ -110,8 +123,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_151538) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "book_id"
+    t.bigint "movie_id"
     t.index ["book_id"], name: "index_recommendations_on_book_id"
     t.index ["logbook_id"], name: "index_recommendations_on_logbook_id"
+    t.index ["movie_id"], name: "index_recommendations_on_movie_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -135,7 +150,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_151538) do
   add_foreign_key "journals", "prompts"
   add_foreign_key "logbooks", "emojis"
   add_foreign_key "logbooks", "users"
+  add_foreign_key "movies", "emojis"
   add_foreign_key "playlists", "emojis"
   add_foreign_key "recommendations", "books"
   add_foreign_key "recommendations", "logbooks"
+  add_foreign_key "recommendations", "movies"
 end

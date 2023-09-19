@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get "/graph-data", to: "logbooks#data"
 
   resources :logbooks do
-    resources :recommendations, only: %i[show]
     resources :playlists, only: %i[show]
     resources :books, only: %i[show]
+    resources :movies, only: %i[show]
     resources :journals, only: %i[new create edit update]
 
     collection do

@@ -7,7 +7,4 @@ class RecommendationsController < ApplicationController
 
     @recommendation.save
   end
-
-  def show
-  end
 end
