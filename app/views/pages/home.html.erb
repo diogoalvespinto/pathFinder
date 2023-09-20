@@ -3,87 +3,65 @@
     <header class="top">
       <h1>Welcome, <%= current_user.first_name %></h1>
       <p><%= Date.today.strftime("%d of %B, %Y") %></p>
-      <div class="banner-text">
-        <p><em>Chi va piano, va sano e va lontano</em> <br>
-          "Who goes slowly, goes safely and goes far"</p>
+      <div class="banner-text d-flex justify-content-end">
+        <p><em>Reconsider what you take for granted.</em> <br>
       </div>
     </header>
 
-    <div class="favorites-container">
-      <h2>What do you need today?</h2>
-      <div class="notification-lg">
-        <p>
-          <strong>
-            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
-            Activities Today:
-          </strong>
-            Meditation and Relaxation
-        </p>
-        <small>8:00pm</small>
-      </div>
+    <div class="favorites-container pb-5">
+      <h2>Something to...</h2>
 
-      <div class="notification-sm">
-        <div class="heart">
-          <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+      <%= link_to logbook_movie_path(@logbook, @logbook.emoji.movie_ids) do %>
+        <div class="notification-sm">
+          <div class="activities-container p-3">
+            <%= image_tag "movie.png", alt: "", style:"width:50px;"%>
+            <p><strong>Watch</strong></p>
+          </div>
         </div>
-        <div class="activities-container">
-          <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-          <p><strong>Vinyasa <br>Yoga</strong></p>
-        </div>
-      </div>
+      <% end %>
 
       <%= link_to new_logbook_journal_path(@logbook) do %>
         <div class="notification-sm">
-          <div class="heart">
-            <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
-          </div>
-          <div class="activities-container">
+          <div class="activities-container p-3">
             <%= image_tag "journal-home.png", alt: "", style:"width:40px; padding-right:10px;"%>
-            <p><strong>Mindful Journaling</strong></p>
+            <p><strong>Journal</strong></p>
           </div>
         </div>
       <% end %>
 
       <%= link_to logbook_book_path(@logbook, @logbook.emoji.book_ids) do %>
         <div class="notification-sm">
-          <div class="heart">
-            <i class="fa-regular fa-heart" style="color: #ccdbdc;"></i>
-          </div>
-          <div class="activities-container">
-            <%= image_tag "book.png", alt: "" %>
-            <p><strong>Book <br> Library</strong></p>
+          <div class="activities-container p-3">
+            <%= image_tag "book.png", alt: "", style:"width:60px; padding-right:10px;"%>
+            <p><strong>Read</strong></p>
           </div>
         </div>
       <% end %>
 
       <%= link_to logbook_playlist_path(@logbook, @logbook.emoji.playlist_ids) do %>
         <div class="notification-sm">
-          <div class="heart">
-            <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
-          </div>
-          <div class="activities-container">
+          <div class="activities-container p-3">
             <%= image_tag "spotify.png", alt: "", style:"width:40px; padding-right:10px;"%>
-            <p><strong>Playlists of <br>the Moment</strong></p>
+            <p><strong>Listen to</strong></p>
           </div>
         </div>
       <% end %>
     </div>
 
-<!--Waves Container-->
-    <div>
+
+    <div class="mt-5 pt-2">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
           <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
         </defs>
         <g class="parallax">
-          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(164, 170, 218, 0.7)" />
+          <use xlink:href="#gentle-wave" x="40" y="0" fill="rgba(164, 170, 218, 0.7)" />
           <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(164, 170, 218, 0.5)" />
           <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(164, 170, 218, 0.3)" />
           <use xlink:href="#gentle-wave" x="48" y="7" fill="#a4aada" />
         </g>
       </svg>
     </div>
-<!--Waves end-->
   </div>
 </div>

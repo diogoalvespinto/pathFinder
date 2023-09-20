@@ -1,12 +1,14 @@
-<div class="h-container layer-recommendation">
+<div class="show-container layer-recommendation mb-5">
   <div class="container mt-5">
-    <div class="recommendations-header mb-3">
-      <h1 class="mb-4">Playlists of the hour:</h1>
-      <p>since you're feeling <em><%= @logbook.emoji.title %></em></p>
-      <p><em>you're doing great by staying in touch with your feelings </em></p>
+    <div class="recommendations-header mb-4 mt-3">
+      <h1>What to listen to</h1>
+      <div class="d-flex justify-content-end">
+        <p>since you're feeling <em><%= @logbook.emoji.title.downcase %></em>.</p>
+      </div>
+      <p><em>you're doing great by staying in touch with your feelings. </em></p>
     </div>
     <% @recommendations.each do |recommendation| %>
-      <div class="p-1">
+      <div class="m-3">
         <%= recommendation.image_url.html_safe %>
       </div>
     <% end %>

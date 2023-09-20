@@ -1,21 +1,21 @@
-<h1>Hi from edit journal!</h1>
+<div class="show-container layer-journal">
+  <div class="journal-container">
+    <h1>Today: <br><%= Date.today.strftime("%d %b, %Y") %></h1>
 
-<%= simple_form_for [@logbook, @journal] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for [@logbook, @journal] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.association :prompt, label_method: :content %>
-    <%= f.input :content %>
-    <%= f.input :date, as: :hidden, input_html: { value: Date.today } %>
-    <%= f.input :time, as: :hidden, input_html: { value: Time.now } %>
+      <p><%= @journal.prompt.content %></p>
+      <%= f.association :prompt, label_method: :content, as: :hidden %>
+
+      <%= f.input :content, label: "Write here" %>
+
+      <div class="form-actions d-flex justify-content-end">
+        <% delete = '<i class="fa-solid fa-xmark"></i>' %>
+        <%= link_to delete.html_safe, logbook_journal_path(@logbook, @journal), class:"btn btn-secondary mx-1", data: { turbo_method: :delete } %>
+        <%= f.submit 'Save', class: "btn btn-secondary" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-
-<%= link_to "Homepage", home_path %>
-<%= link_to "Back to this log", logbook_path(@logbook) %>
+</div>

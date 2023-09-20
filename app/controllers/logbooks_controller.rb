@@ -46,6 +46,11 @@ class LogbooksController < ApplicationController
     end
   end
 
+  def destroy
+    @logbook.destroy
+    redirect_to logbooks_path
+  end
+
   def date
     @date = Date.parse(params[:date])
     @logbooks = Logbook.where(

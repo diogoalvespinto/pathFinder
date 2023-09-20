@@ -1,3 +1,3 @@
 class Recommendation < ApplicationRecord
-  belongs_to :logbook
+  belongs_to :logbook, dependent: :destroy
 end

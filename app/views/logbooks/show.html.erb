@@ -1,23 +1,29 @@
-<div class="h-container layer4">
+<div class="show-container layer4">
   <div class="journal-header-container">
-    <h1><span><%= @logbook.date.strftime("%d of %B") %><br><%= @logbook.time.strftime("%I:%M %p") %></span></h1>
+    <h1><span><%= @logbook.date.strftime("%b %d") %><br><%= @logbook.time.strftime("%I:%M %p") %></span></h1>
   </div>
   <div class="journal-entry">
-    <h5><%= @logbook.emoji.image.html_safe %>  <%= @logbook.emoji.title %></h5>
+    <div class="d-flex justify-content-between mb-4">
+      <h5 class="align-self-end"><%= @logbook.emoji.image.html_safe %>  <%= @logbook.emoji.title %></h5>
+        <div class="d-flex justify-content-end">
+          <% delete = '<i class="fa-solid fa-xmark"></i>' %>
+          <%= link_to delete.html_safe, logbook_path(@logbook), class:"btn btn-secondary mx-1", data: { turbo_method: :delete } %>
+          <% edit = '<i class="fa-regular fa-pen-to-square"></i>' %>
+          <%= link_to edit.html_safe, edit_logbook_path(@logbook), class:"btn btn-secondary" %>
+        </div>
+    </div>
+
     <p><%= @logbook.summary %></p>
     <%= cl_image_tag(@logbook.image.key, class:"card-img-top journal-image", crop: :fill) if @logbook.image.attached? %>
     <br>
     <% @logbook.journals.each do |journal| %>
-      Journal entry at <%= journal.created_at.strftime("%I:%M %p") %>:
-      <p><%= journal.prompt.content if journal.prompt %></p>
+
+    <b><i>
+      <%= link_to "Journal", edit_logbook_journal_path(@logbook, journal) %>
+    </b></i>
+      entry at <%= journal.created_at.strftime("%I:%M %p") %>:
+      <i><p class="text-end"><%= journal.prompt.content if journal.prompt %></p></i>
       <p><%= journal.content %></p>
-      <div class="d-flex justify-content-between">
-      <%= link_to "Edit journal", edit_logbook_journal_path(@logbook, journal) %>
     <% end %>
-      <div class="d-flex justify-content-end">
-      <% edit = '<i class="fa-regular fa-pen-to-square"></i>' %>
-      <%= link_to edit.html_safe, edit_logbook_path(@logbook), class:"btn btn-secondary mb-3" %>
-      </div>
-    </div>
   </div>
 </div>

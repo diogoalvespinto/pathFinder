@@ -1,6 +1,6 @@
 class JournalsController < ApplicationController
-  before_action :set_logbook, only: %i[new create edit update]
-  before_action :set_journal, only: %i[edit update]
+  before_action :set_logbook, only: %i[new create edit update destroy]
+  before_action :set_journal, only: %i[edit update destroy]
 
   def new
     @journal = Journal.new
@@ -28,6 +28,11 @@ class JournalsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @journal.destroy
+    redirect_to logbook_path(@logbook)
   end
 
   private
